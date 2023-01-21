@@ -1,14 +1,28 @@
+// import classNames from 'classnames/bind';
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { PageTransition, variantsFadeInOut } from '../components/transitions'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <h1>Rewrite</h1>
-      <footer className={styles.footer}>
-        Created for U of T Hacks 2023
-      </footer>
-    </div>
+    <>
+    <Head>
+      <title>Rewrite</title>
+    </Head>
+    <PageTransition variants={variantsFadeInOut} >
+      <div className={styles.container}>
+        <p>
+          kajsbdjuashdjahsd
+          askduyasduhadsuhad
+          akhsdbasdhkashd
+          kajsbdjuashdjahsd
+          askduyasduhadsuhad
+          akhsdbasdhkashdokajsbdjuashdjahsd
+          askduyasduhadsuhad
+          akhsdbasdhkashd
+        </p>  
+      </div>
+    </PageTransition>
+    </>
   )
 }

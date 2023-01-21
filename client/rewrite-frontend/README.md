@@ -13,3 +13,12 @@ Todo
 - [ ] Passcode
 - [ ] Pictures
 - [ ] omit entries from the summary (either while entering or remove in current summary)
+
+
+## Dev Todo
+- [ ] Incorporate colorscheme
+- [ ] Nav
+- [ ] Bookmark effect
+- [ ] Book loading transition
+- [ ] Text editor
+- [ ] 
