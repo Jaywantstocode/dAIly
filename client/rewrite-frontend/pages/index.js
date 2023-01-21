@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { PageTransition, variantsFadeInOut } from '../components/transitions'
+import EntryEditor from '../components/EntryEditor'
 
 export default function Home() {
   return (
@@ -11,16 +12,7 @@ export default function Home() {
     </Head>
     <PageTransition variants={variantsFadeInOut} >
       <div className={styles.container}>
-        <p>
-          kajsbdjuashdjahsd
-          askduyasduhadsuhad
-          akhsdbasdhkashd
-          kajsbdjuashdjahsd
-          askduyasduhadsuhad
-          akhsdbasdhkashdokajsbdjuashdjahsd
-          askduyasduhadsuhad
-          akhsdbasdhkashd
-        </p>  
+        <EntryEditor></EntryEditor>
       </div>
     </PageTransition>
     </>
