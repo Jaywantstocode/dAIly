@@ -14,3 +14,4 @@ class Query(graphene.ObjectType):
     users = graphene.Field(User)
     def resolve_users():
         pass
+    

@@ -6,4 +6,6 @@ class UserModel(AbstractDocument):
         'collection': 'user',
     }
 
-    name = StringField()
+    name = StringField(required=True)
+    email = StringField()
+    

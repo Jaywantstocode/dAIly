@@ -1,12 +1,13 @@
+
+
 import graphene
 from abstract.mutations import AbstractMutation
 from user.query import User as UserType
 
 class UserInput():
     name = graphene.String()
-    email = graphene.String()
 
-class CreateUserMutation(AbstractMutation):
+class CreateDiaryMutation(AbstractMutation):
     user = graphene.Field(UserType)
 
     class Arguments:
@@ -16,11 +17,8 @@ class CreateUserMutation(AbstractMutation):
 
     def mutate(self, info, test):
         ok = "aaa"
-        return CreateUserMutation(ok=ok)
+        return CreateDiaryMutation(ok=ok)
 
-# class UserLoginMutation(AbstractMutation):
-#     pass
 
 class Mutation(graphene.ObjectType):
-    create_user = CreateUserMutation.Field()
-    
+    create_diary = CreateDiaryMutation.Field()
