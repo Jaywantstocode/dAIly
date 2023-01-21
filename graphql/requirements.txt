@@ -1,0 +1,6 @@
+cohere==3.1.6
+pymongo==4.3.2
+mongoengine==0.24.2
+Flask==2.0.3
+flask_mongoengine==1.0.0
+flask_graph==2.0.1
