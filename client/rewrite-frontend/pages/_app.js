@@ -1,4 +1,4 @@
-import styles from '../styles/globals.css'
+import styles from '../styles/globals.scss'
 import { TopLevelAnimationWrapper } from '../components/transitions';
 
 function MyApp({ Component, pageProps }) {

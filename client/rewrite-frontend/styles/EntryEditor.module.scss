@@ -1,6 +1,9 @@
+.test {
+  border: 1px solid red;
+}
 /* Basic editor styles */
 .ProseMirror {
-  margin-top: 1rem;
+  border: 1px solid red;
 
   > * + * {
     margin-top: 0.75em;
