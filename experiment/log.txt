@@ -1,0 +1,526 @@
+
+      ++++ 2023-01-21 02:01:28.203601
+      [cohere.Generation {
+	client: <cohere.client.Client object at 0x102d96ee0>
+	id: 9a13f585-50f6-496c-856f-d8c612441666
+	text:   "date":"01-24-2020",
+  "key_events":["Parents announced divorce", "Sister and I sat in living room", "Mother cried", "Father remained stoic", "They both apologized and said they still loved us", "But I couldn't help but feel that their love for each other was more important than their love for us", "I feel like my world has been turned upside down. I don't know what to do or who to talk to. I just want to crawl into bed and forget this day ever happened."]
+}
+	likelihood: None
+	token_likelihoods: None
+}]
+      ++++
+      
+      ++++ 2023-01-21 02:01:38.269328
+      [cohere.Generation {
+	client: <cohere.client.Client object at 0x102d96ee0>
+	id: 67fd837e-6f26-4126-afee-32c7e74154cf
+	text:   "date":"01-26-2021",
+  "key_events":["Boyfriend dumped me", "I felt like my heart had been ripped out of my chest", "I couldn't stop crying", "I felt so lost and unsure of my future"],
+}
+	likelihood: None
+	token_likelihoods: None
+}]
+      ++++
+      
+      ++++ 2023-01-21 02:01:45.987991
+      [cohere.Generation {
+	client: <cohere.client.Client object at 0x102d96ee0>
+	id: 07b77db1-03d7-4285-ab14-cb8ea9d4f6ce
+	text:   "date":"01-17-2019",
+  "key_events":["Met John for the first time", "Spent hours getting ready", "Picked out the perfect outfit", "Enjoyed the date", "Strong connection", "Attentive and considerate", "Comfortable"]
+}
+	likelihood: None
+	token_likelihoods: None
+}]
+      ++++
+      
+++++ 2023-01-21 02:06:27.517204
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+}
+
+Here's another diary entry:
+
+
+
+  "Monday, January 24th, 2020
+
+Today was a day I never thought would come. My parents announced to my sister and me that they are getting a divorce. I'm not sure how to feel. I am heartbroken and confused, but also relieved that the tension and fighting that has been going on for so long will finally be over.
+
+It's hard to believe that the two people who I have always looked up to and trusted to be there for each other are now ending their marriage. I have so many questions and I'm not sure if I'll ever get the answers I need.
+
+My sister and I sat in the living room while they told us the news. My mother cried while my father remained stoic. They both apologized and said they still loved us and that this was the best decision for everyone involved. But I couldn't help but feel that their love for each other was more important than their love for us.
+
+I can't help but feel guilty for all the times I wished they would just get divorced and put an end to their constant fighting. I never imagined it would actually happen and now that it has, I'm not sure how to move forward.
+
+I'm scared about what the future holds for our family. Will we be able to maintain a relationship with both parents? Will we have to choose sides? Will our family ever be the same again?
+
+I feel like my world has been turned upside down. I don't know what to do or who to talk to. I just want to crawl into bed and forget this day ever happened."
+
+  JSON:
+  
+
+Result:
+  "date":"01-24-2020",
+  "key_events":["Parents announced divorce", "sister and I sat in living room", "Mother cried", "Father remained stoic", "They both apologized", "This is the best decision for everyone involved", "I felt their love for each other was more important than their love for us", "I never imagined it would actually happen", "I'm scared about what the future holds", "I don't know what to do or who to talk to", "I just want to crawl into bed and forget this day ever happened"
+}
+++++
+
+++++ 2023-01-21 02:06:35.243841
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+}
+
+Here's another diary entry:
+
+
+
+  "Wednesday, January 26th, 2021
+
+Today was the worst day of my life. My boyfriend of two years dumped me. I never thought it would happen to me. We talked on the phone and he just said it was over, that he didn't feel the same way about me anymore. He said he needed some time to himself. I couldn't believe what was happening, I felt like I was in a bad dream.
+
+I hung up the phone and just sat there in shock. I felt like my heart had been ripped out of my chest. I couldn't stop crying, I felt so lost and alone. All the memories of our time together flooded my mind. All the good times we had, all the promises he made, all the plans we had for the future, gone in an instant.
+
+I tried to understand what went wrong, what I did to make him lose feelings for me. I felt like a failure, like it was all my fault. I couldn't shake off the feeling of rejection and disappointment.
+
+I didn't know what to do with myself. I felt like my whole world had been turned upside down. I couldn't bear the thought of living without him. I thought we had a future together.
+
+I spent the rest of the day in bed, crying and thinking about what went wrong. I didn't want to talk to anyone or see anyone. I just wanted to be alone with my thoughts. I felt so lost and unsure of my future.
+
+This is a difficult time for me, I feel hurt, angry, and confused. I know it will take time to heal but I just hope that one day I will be able to move on from this and find happiness again."
+
+  JSON:
+  
+
+Result:
+  "date":"01-26-2021",
+  "key_events":["Boyfriend dumped me", "I felt like my heart had been ripped out of my chest", "I couldn't stop crying", "I felt so lost and unsure of my future"]
+}
+++++
+
+++++ 2023-01-21 02:06:45.263913
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+}
+
+Here's another diary entry:
+
+
+
+  "Monday, January 17th, 2019
+
+Today was my first date with John. I was really excited but also a bit nervous. I spent hours getting ready and picking out the perfect outfit. I wanted to make a good impression.
+
+We met at a cute little coffee shop downtown. As soon as I saw him, my heart started racing. He looked even better than his pictures! We sat down and started chatting. I was surprised at how easy it was to talk to him. Time flew by and before I knew it, we had been talking for over an hour.
+
+We decided to take a walk in the park. The weather was perfect, and it was so nice to be out in the fresh air. We walked and talked, and I felt like I was getting to know him better and better. He was funny and smart, and I found myself laughing a lot.
+
+After the walk, we went to a nearby restaurant for dinner. The conversation continued to flow easily, and I enjoyed every moment of it. I felt a strong connection with him. He was attentive and considerate and I felt very comfortable around him.
+
+As the night came to an end, I couldn't believe how well the date had gone. I was really sad to say goodbye and felt butterflies in my stomach as I left. I couldn't wait to see him again.
+
+Overall, it was a fantastic first date, and I can't wait to see where things go with John. I have a good feeling about this!"
+
+  JSON:
+  
+
+Result:
+  "date":"01-17-2019",
+  "key_events":["First date with John", "chose the perfect outfit", "had a great time talking", "felt a strong connection", "attentive and considerate"],
+  "location":"downtown",
+  "restaurant": "nearby"
+}
+++++
+
+++++ 2023-01-21 02:12:06.745941
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+3. The most important topics, in one or two words, as a list of words.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+  "themes":["Johnny's birth", "New job"]
+}
+
+Here's another diary entry:
+
+
+  "Monday, January 24th, 2020
+
+Today was a day I never thought would come. My parents announced to my sister and me that they are getting a divorce. I'm not sure how to feel. I am heartbroken and confused, but also relieved that the tension and fighting that has been going on for so long will finally be over.
+
+It's hard to believe that the two people who I have always looked up to and trusted to be there for each other are now ending their marriage. I have so many questions and I'm not sure if I'll ever get the answers I need.
+
+My sister and I sat in the living room while they told us the news. My mother cried while my father remained stoic. They both apologized and said they still loved us and that this was the best decision for everyone involved. But I couldn't help but feel that their love for each other was more important than their love for us.
+
+I can't help but feel guilty for all the times I wished they would just get divorced and put an end to their constant fighting. I never imagined it would actually happen and now that it has, I'm not sure how to move forward.
+
+I'm scared about what the future holds for our family. Will we be able to maintain a relationship with both parents? Will we have to choose sides? Will our family ever be the same again?
+
+I feel like my world has been turned upside down. I don't know what to do or who to talk to. I just want to crawl into bed and forget this day ever happened."
+
+  JSON:
+  
+
+Result:
+  "date":"01-24-2020",
+  "key_events":["Parents announced divorce", "Sister and I sat in living room", "Mother cried", "Father remained stoic", "They both apologized", "This was the best decision for everyone involved"],
+  "themes":["Divorce", "Family", "Parents", "Sister", "Day"]
+}
+++++
+
+++++ 2023-01-21 02:12:16.005674
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+3. The most important topics, in one or two words, as a list of words.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+  "themes":["Johnny's birth", "New job"]
+}
+
+Here's another diary entry:
+
+
+  "Wednesday, January 26th, 2021
+
+Today was the worst day of my life. My boyfriend of two years dumped me. I never thought it would happen to me. We talked on the phone and he just said it was over, that he didn't feel the same way about me anymore. He said he needed some time to himself. I couldn't believe what was happening, I felt like I was in a bad dream.
+
+I hung up the phone and just sat there in shock. I felt like my heart had been ripped out of my chest. I couldn't stop crying, I felt so lost and alone. All the memories of our time together flooded my mind. All the good times we had, all the promises he made, all the plans we had for the future, gone in an instant.
+
+I tried to understand what went wrong, what I did to make him lose feelings for me. I felt like a failure, like it was all my fault. I couldn't shake off the feeling of rejection and disappointment.
+
+I didn't know what to do with myself. I felt like my whole world had been turned upside down. I couldn't bear the thought of living without him. I thought we had a future together.
+
+I spent the rest of the day in bed, crying and thinking about what went wrong. I didn't want to talk to anyone or see anyone. I just wanted to be alone with my thoughts. I felt so lost and unsure of my future.
+
+This is a difficult time for me, I feel hurt, angry, and confused. I know it will take time to heal but I just hope that one day I will be able to move on from this and find happiness again."
+
+  JSON:
+  
+
+Result:
+  "Wednesday, January 26th, 2021
+
+Today was the worst day of my life. My boyfriend of two years dumped me. I never thought it would happen to me. We talked on the phone and he just said it was over, that he didn't feel the same way about me anymore. He said he needed some time to himself. I couldn't believe what was happening, I felt like I was in a bad dream.
+
+I hung up the phone and just sat there in shock. I felt like my heart had been ripped out of my chest. I couldn't stop crying, I felt so lost and alone. All the memories of our time together flooded my mind. All the good times we had, all the promises he made, all the plans we had for the future, gone in an instant.
+
+I tried to understand what went wrong, what I did to make him lose feelings for me. I felt like a failure, like it was all my fault. I couldn't shake off the feeling of rejection and disappointment.
+
+I didn't know what to do with myself. I felt like my whole world had been turned upside down. I couldn't bear the thought of living without him. I thought
+++++
+
+++++ 2023-01-21 02:12:24.699736
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+3. The most important topics, in one or two words, as a list of words.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+  "themes":["Johnny's birth", "New job"]
+}
+
+Here's another diary entry:
+
+
+  "Monday, January 17th, 2019
+
+Today was my first date with John. I was really excited but also a bit nervous. I spent hours getting ready and picking out the perfect outfit. I wanted to make a good impression.
+
+We met at a cute little coffee shop downtown. As soon as I saw him, my heart started racing. He looked even better than his pictures! We sat down and started chatting. I was surprised at how easy it was to talk to him. Time flew by and before I knew it, we had been talking for over an hour.
+
+We decided to take a walk in the park. The weather was perfect, and it was so nice to be out in the fresh air. We walked and talked, and I felt like I was getting to know him better and better. He was funny and smart, and I found myself laughing a lot.
+
+After the walk, we went to a nearby restaurant for dinner. The conversation continued to flow easily, and I enjoyed every moment of it. I felt a strong connection with him. He was attentive and considerate and I felt very comfortable around him.
+
+As the night came to an end, I couldn't believe how well the date had gone. I was really sad to say goodbye and felt butterflies in my stomach as I left. I couldn't wait to see him again.
+
+Overall, it was a fantastic first date, and I can't wait to see where things go with John. I have a good feeling about this!"
+
+  JSON:
+  
+
+Result:
+  "date":"01-17-2019",
+  "key_events":["First date with John", "chatting", "walking", "dinner", "good feeling"],
+  "themes":["John", "connection", "date"
+++++
+
+++++ 2023-01-21 02:16:33.337631
+Model properties"
+max_tokens=300
+temperature=0.8
+
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+3. The most important topics, in one or two words, as a list of words.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+  "themes":["Johnny's birth", "New job"]
+}
+
+Here's another diary entry:
+
+
+  "Monday, January 24th, 2020
+
+Today was a day I never thought would come. My parents announced to my sister and me that they are getting a divorce. I'm not sure how to feel. I am heartbroken and confused, but also relieved that the tension and fighting that has been going on for so long will finally be over.
+
+It's hard to believe that the two people who I have always looked up to and trusted to be there for each other are now ending their marriage. I have so many questions and I'm not sure if I'll ever get the answers I need.
+
+My sister and I sat in the living room while they told us the news. My mother cried while my father remained stoic. They both apologized and said they still loved us and that this was the best decision for everyone involved. But I couldn't help but feel that their love for each other was more important than their love for us.
+
+I can't help but feel guilty for all the times I wished they would just get divorced and put an end to their constant fighting. I never imagined it would actually happen and now that it has, I'm not sure how to move forward.
+
+I'm scared about what the future holds for our family. Will we be able to maintain a relationship with both parents? Will we have to choose sides? Will our family ever be the same again?
+
+I feel like my world has been turned upside down. I don't know what to do or who to talk to. I just want to crawl into bed and forget this day ever happened."
+
+  JSON:
+  
+
+
+Result:
+  "date":"01-24-2020",
+  "key_events":["Parents announced divorce", "Sister and me sat in living room", "Mum cried", "Dad remained stoic", "They both apologized", "This was the best decision for everyone involved", "I felt their love for each other was more important than their love for us"
+  "themes":["Divorce", "Family", "Relationships"]
+}
+++++
+
+++++ 2023-01-21 02:16:42.674418
+Model properties"
+max_tokens=300
+temperature=0.8
+
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+3. The most important topics, in one or two words, as a list of words.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+  "themes":["Johnny's birth", "New job"]
+}
+
+Here's another diary entry:
+
+
+  "Wednesday, January 26th, 2021
+
+Today was the worst day of my life. My boyfriend of two years dumped me. I never thought it would happen to me. We talked on the phone and he just said it was over, that he didn't feel the same way about me anymore. He said he needed some time to himself. I couldn't believe what was happening, I felt like I was in a bad dream.
+
+I hung up the phone and just sat there in shock. I felt like my heart had been ripped out of my chest. I couldn't stop crying, I felt so lost and alone. All the memories of our time together flooded my mind. All the good times we had, all the promises he made, all the plans we had for the future, gone in an instant.
+
+I tried to understand what went wrong, what I did to make him lose feelings for me. I felt like a failure, like it was all my fault. I couldn't shake off the feeling of rejection and disappointment.
+
+I didn't know what to do with myself. I felt like my whole world had been turned upside down. I couldn't bear the thought of living without him. I thought we had a future together.
+
+I spent the rest of the day in bed, crying and thinking about what went wrong. I didn't want to talk to anyone or see anyone. I just wanted to be alone with my thoughts. I felt so lost and unsure of my future.
+
+This is a difficult time for me, I feel hurt, angry, and confused. I know it will take time to heal but I just hope that one day I will be able to move on from this and find happiness again."
+
+  JSON:
+  
+
+
+Result:
+  "Wednesday, January 26th, 2021
+
+Today was the worst day of my life. My boyfriend of two years dumped me. I never thought it would happen to me. We talked on the phone and he just said it was over, that he didn't feel the same way about me anymore. He said he needed some time to himself. I couldn't believe what was happening, I felt like I was in a bad dream.
+
+I hung up the phone and just sat there in shock. I felt like my heart had been ripped out of my chest. I couldn't stop crying, I felt so lost and alone. All the memories of our time together flooded my mind. All the good times we had, all the promises he made, all the plans we had for the future, gone in an instant.
+
+I tried to understand what went wrong, what I did to make him lose feelings for me. I felt like a failure, like it was all my fault. I couldn't shake off the feeling of rejection and disappointment.
+
+I didn't know what to do with myself. I felt like my whole world had been turned upside down. I couldn't bear the thought of living without him. I thought we had a future together.
+
+I spent the rest of the day in bed, crying and thinking about what went wrong. I didn't want to talk to anyone or see anyone. I just wanted to be alone with my thoughts. I felt
+++++
+
+++++ 2023-01-21 02:17:08.384358
+Model properties"
+max_tokens=300
+temperature=0.8
+
+Prompt:
+
+Read the following diary entry and extract the following information:
+1. The date
+2. A short summary of the key events, as a list of sentences.
+3. The most important topics, in one or two words, as a list of words.
+
+For example, for the following diary entry, as shown in quotes:
+"Mon, Jan 17, 1996
+
+Little Johnny opened his eyes for the first time today. He's an angel, looks just like his mother.
+
+We went down by the icecream parlour on the way home — Mathilda's favourite flavour is chocolate; I'd better remember that!
+
+I start my new job tomorrow. Working down by the docks. It'll be hard work, but the family will be more comfortable for it..."
+
+You would provide the following information, in JSON format:
+
+JSON: {
+  "date":"01-17-1996",
+  "key_events":["Jonny opened his eyes for the first time", "Mathilda's favourite icecream flavour is chocolate", "Started first job, working on the docks"]
+  "themes":["Johnny's birth", "New job"]
+}
+
+Here's another diary entry:
+
+
+  "Monday, January 17th, 2019
+
+Today was my first date with John. I was really excited but also a bit nervous. I spent hours getting ready and picking out the perfect outfit. I wanted to make a good impression.
+
+We met at a cute little coffee shop downtown. As soon as I saw him, my heart started racing. He looked even better than his pictures! We sat down and started chatting. I was surprised at how easy it was to talk to him. Time flew by and before I knew it, we had been talking for over an hour.
+
+We decided to take a walk in the park. The weather was perfect, and it was so nice to be out in the fresh air. We walked and talked, and I felt like I was getting to know him better and better. He was funny and smart, and I found myself laughing a lot.
+
+After the walk, we went to a nearby restaurant for dinner. The conversation continued to flow easily, and I enjoyed every moment of it. I felt a strong connection with him. He was attentive and considerate and I felt very comfortable around him.
+
+As the night came to an end, I couldn't believe how well the date had gone. I was really sad to say goodbye and felt butterflies in my stomach as I left. I couldn't wait to see him again.
+
+Overall, it was a fantastic first date, and I can't wait to see where things go with John. I have a good feeling about this!"
+
+  JSON:
+  
+
+
+Result:
+  "date":"01-17-2019",
+  "key_events":["First date with John", "Chat in coffee shop", "Take a walk in the park", "Dinner at a restaurant"]
+  "themes":["First date", "Chat", "Walk", "Dinner"]
+}
+++++
