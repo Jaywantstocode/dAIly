@@ -1,9 +1,5 @@
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-
-import 'react-quill/dist/quill.snow.css';
-
+import { useState } from 'react'
+import styles from '../styles/EntryEditor.module.scss'
 /**
  * Create a markdown editor in the page. Edit mode/view modes available.
  */
@@ -12,9 +8,12 @@ const EntryEditor = ({content}) => {
 
   return (
     <>
-       <ReactQuill value={value} onChange={setValue}/>
+
+      <textarea className={styles.editor}>
+
+      </textarea>
     </>
-  );
+  )
 }
 
 export default EntryEditor;
