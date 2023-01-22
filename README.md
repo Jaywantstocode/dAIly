@@ -2,7 +2,7 @@
 
 ## Introduction
 
-dAIly is a diary app that uses Cohere API to create a summary of events that have occured in a given time period from information collected from a user's diary entries.
+dAIly is a diary website that uses Cohere API to create a summary of events that have occured in a given time period from information collected from a user's diary entries.
 
 Journaling has been shown to have multiple positive impacts including reducing anxiety, improving ones immune system, and even aiding in goal-achievement!
 
