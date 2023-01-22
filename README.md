@@ -36,3 +36,4 @@ It is our goal to create a diary app that provides users with an effortless way 
 https://www.figma.com/file/uPhmRQAqb8zxX4X9cSKNpF/UofTHacksX_2023_lofi_wireframe?node-id=34%3A647&t=vI5OYeJZnaKTCX7J-0
 
 ## Prototypes
+cd into frontend & backend (graphql/) and follow instruction on each page to run locally.
