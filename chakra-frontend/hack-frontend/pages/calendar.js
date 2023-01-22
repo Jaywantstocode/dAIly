@@ -1,4 +1,4 @@
-import { format, startOfToday, addMonths } from "date-fns";
+import { format, startOfToday, addMonths, startOfMonth, subDays, addDays, endOfMonth} from "date-fns";
 import CalendarView from "@/components/CalendarView";
 import { Flex, Box, Heading } from "@chakra-ui/react";
 import { useState } from "react";
@@ -23,28 +23,37 @@ query {diaries(
 */
 /*
 diaries(
-  before: String
-  after: String
-  first: Int
-  last: Int
-  Cls: String
-  body: String
-  createdTs: DateTime
-  date: DateTime
-  id: ID
-  keyEvents: String
-  updatedTs: DateTime
-  user: ID
-): DiaryConnection
+startDate: Date
+endDate: Date
+before: String
+after: String
+first: Int
+last: Int
+Cls: String
+body: String
+createdTs: DateTime
+date: DateTime
+id: ID
+keyEvents: String
+updatedTs: DateTime
+user: ID): DiaryConnection
  */
 
-const QUERY_DATES = gql`
-  query ()
-`;
+import { QUERY_DIARIES } from "@/components/backend";
 
 const Calendar = (props) => {
   const [anchorDate, setAnchorDate] = useState(startOfToday());
-  const { loading, error, data } = useQuery();
+  const yyyymmdd = (date) => format(date, "yyyy-MM-dd");
+  const startDate = yyyymmdd(subDays(startOfMonth(anchorDate), 7));
+  const endDate = yyyymmdd(addDays(endOfMonth(anchorDate), 7));
+  
+  const userId = useUserId();
+  console.log("Calender: User Id => ", userId);
+
+  const { loading, error, data } = useQuery(QUERY_DIARIES, { variables: { id: userId, startDate: startDate, endDate: endDate }});
+
+  console.log(JSON.stringify(data));
+
   const handleChangeMonth = (displacement) => {
     setAnchorDate(addMonths(anchorDate, displacement));
   };
@@ -63,11 +72,16 @@ const Calendar = (props) => {
       >
         <Box mr="auto" ml="auto">
           <Heading mb="4%">{dateHeading}</Heading>
+
+
           <CalendarView
             todaysDate={anchorDate}
             goBackMonthCallback={() => handleChangeMonth(-1)}
             goForwardMonthCallback={() => handleChangeMonth(+1)}
           />
+
+
+
         </Box>
       </Flex>
     </>

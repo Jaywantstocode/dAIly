@@ -1,4 +1,4 @@
-import { Textarea, Heading, Box, Button } from "@chakra-ui/react";
+import { Textarea, Heading, Box, Button, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { gql, useQuery, useMutation } from "@apollo/client";
@@ -30,22 +30,13 @@ const UPDATE_DIARY = gql`
 
 // };
 
-const A_QUERY = gql`
-mutation {
-  createUser(input: { name: "jack", email: "jacky@gmail.com" }) {
-    user {
-      id
-      email
-      name
-    }
-  }
-}
-`;
-
 const Editor = ({ date, textContent }) => {
   const userId = useAppContext();
 
+  console.log("The editor sees: ", date, textContent);
+
   const [value, setValue] = useState(textContent);
+
   const [editable, setEditable] = useState(false);
   const [updateDiary, { data, loading, error }] = useMutation(UPDATE_DIARY);
 
@@ -54,8 +45,8 @@ const Editor = ({ date, textContent }) => {
   if (loading) return 'Submitting...';
   if (error) return `${JSON.stringify(error, null, 2)}`;
 
+  console.log("This date is bad: ", date);
   const dateString = format(date, "PPP");
-
 
   const handleClick = () => {
     if (editable) {
@@ -81,8 +72,8 @@ const Editor = ({ date, textContent }) => {
   };
 
   return (
-    <Box p="2rem">
-      <Heading mb="2%">{dateString}</Heading>
+    <Flex flexDirection="column" p="2rem" px={"8rem"}>
+      <Heading letterSpacing="" mb="2%">{dateString}</Heading>
       <Textarea
         value={value}
         onChange={handleOnChange}
@@ -91,8 +82,8 @@ const Editor = ({ date, textContent }) => {
         size="lg"
         h="60vh"
       />
-      <Button onClick={handleClick}>{editable ? "Save" : "Edit"}</Button>
-    </Box>
+      <Button alignSelf="flex-end" my="1rem" onClick={handleClick}>{editable ? "Save" : "Edit"}</Button>
+    </Flex>
   );
 };
 

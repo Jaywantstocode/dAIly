@@ -11,6 +11,11 @@ import {
 import { AppWrapper, useAppContext } from "@/components/ContextProvider";
 
 import "../styles/globals.scss";
+import { Frank_Ruhl_Libre } from '@next/font/google'
+const frankRuhlLibre = Frank_Ruhl_Libre({
+  subsets: ['latin'],
+  weight: ['300', '600'],
+});
 
 const colors = {
   brand: {
@@ -26,32 +31,33 @@ const client = new ApolloClient({
 });
 
 // Horrid, hardcoded request for the user
-const data = client
-  .mutate({
-    mutation: gql`
-      mutation {
-        createUser(input: { name: "jack", email: "jacky@gmail.com" }) {
-          user {
-            id
-            email
-            name
-          }
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result.data));
+// const data = client
+//   .mutate({
+//     mutation: gql`
+//       mutation {
+//         createUser(input: { name: "jack", email: "jacky@gmail.com" }) {
+//           user {
+//             id
+//             email
+//             name
+//           }
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result.data));
 
-console.log("Data -> ", data);
+const HARDCODED_ID = "VXNlcjo2M2NjYTZiNzdkM2Q1NzVlNGZiMDZiMmQ=";
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({ colors,
+fonts: {
+  body: frankRuhlLibre,
+  heading: frankRuhlLibre,
+} });
 
 function MyApp({ Component, pageProps }) {
-  const appContext = useAppContext();
-  console.log("The app context: ", appContext);
-
   return (
-    <AppWrapper userId={"VXNlcjo2M2NjZTJjNmI5YTI3ZDZiZGZhMGZjYzQ="}>
+    <AppWrapper userId={HARDCODED_ID}>
       <ApolloProvider client={client}>
         <ChakraProvider theme={theme}>
           <Nav />

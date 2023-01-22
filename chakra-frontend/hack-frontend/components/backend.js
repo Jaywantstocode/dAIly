@@ -1,29 +1,20 @@
-
-
 import { gql } from "@apollo/client";
 
 /**
- * 
- * @param {*} id 
- * @returns 
+ *
+ * @param {*} id
+ * @returns
  */
-const Summary = (id) => gql`
-  
-`
-
-
+const Summary = (id) => gql``;
 
 /**
- * 
- * @param {*} id 
- * @returns 
+ *
+ * @param {*} id
+ * @returns
  */
 const DiaryByDate = (date) => {
-  return gql`
-  
-  `;
-}
-
+  return gql``;
+};
 
 /**
 
@@ -50,14 +41,7 @@ mutation{createDiary(
 
 /////////////////////
 
-
-const CreateDiary = ({ input, id }) => {
-
-}
-
-
-
-
+const CreateDiary = ({ input, id }) => {};
 
 /*
 
@@ -79,3 +63,47 @@ client
 
 
 */
+
+const QUERY_DIARIES = gql`
+  query queryDiaries($id: ID, $startDate: Date, $endDate: Date) {
+    diaries(id: $id, startDate: $startDate, endDate: $endDate) {
+      edges {
+        node {
+          id
+          date
+          body
+        }
+      }
+    }
+  }
+`;
+
+const UPDATE_DIARY = gql`
+  mutation updateDiary($diaryId: ID, $input: String!) {
+    updateDiary(diaryId: $diaryId, input: { detail: $input }) {
+      diary {
+        id
+        date
+        keyEvents
+        body
+      }
+    }
+  }
+`;
+
+const CREATE_DIARY = gql`
+  mutation CreateDiary($input: Date, $userId: ID) {
+    createDiary(input: { date: $input }, userId: $userId) {
+      diary {
+        id
+        date
+        use {
+          name
+        }
+        keyEvents
+      }
+    }
+  }
+`;
+
+export { QUERY_DIARIES, UPDATE_DIARY, CREATE_DIARY };
