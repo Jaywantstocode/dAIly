@@ -1,8 +1,9 @@
 import graphene
 from abstract.mutations import AbstractMutation
 from user.query import User as UserType
+from user.model import UserModel
 
-class UserInput():
+class UserInput(graphene.InputObjectType):
     name = graphene.String()
     email = graphene.String()
 
@@ -10,17 +11,22 @@ class CreateUserMutation(AbstractMutation):
     user = graphene.Field(UserType)
 
     class Arguments:
-        test = graphene.String()
+        input = UserInput()
 
-    ok = graphene.String()
-
-    def mutate(self, info, test):
-        ok = "aaa"
-        return CreateUserMutation(ok=ok)
+    def mutate(self, info, input = None):
+        user = UserModel(
+            name=input.name,
+            email=input.email
+        )
+        user.save()
+        return CreateUserMutation(user=user)
 
 # class UserLoginMutation(AbstractMutation):
-#     pass
+    
+#     def mutate():
+#         pass
 
 class Mutation(graphene.ObjectType):
     create_user = CreateUserMutation.Field()
+    # user_login = UserLoginMutation.Field()
     

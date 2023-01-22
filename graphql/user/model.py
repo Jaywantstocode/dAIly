@@ -1,5 +1,5 @@
 from abstract.model import AbstractDocument
-from mongoengine.fields import (StringField)
+from mongoengine.fields import (StringField, EmailField)
 class UserModel(AbstractDocument):
 
     meta = {
@@ -7,5 +7,4 @@ class UserModel(AbstractDocument):
     }
 
     name = StringField(required=True)
-    email = StringField()
-    
+    email = EmailField(required=True)

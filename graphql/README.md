@@ -13,6 +13,14 @@ pyenv local 3.9.12
 ## installing required packages
 pip install -r requirements.txt
 
+
+## .env file
+Input username and password for MongoDB
+```
+username="xxx"
+password="xxx"
+```
+
 ## run graphql server locally
 python3 app.py
 

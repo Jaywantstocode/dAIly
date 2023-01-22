@@ -5,7 +5,7 @@ from mongoengine.fields import (
     DateTimeField
 )
 
-def update(document):
+def update(sender, document):
     if document.created_ts is None:
         document.created_ts = datetime.now()
     document.updated_ts = datetime.now()

@@ -8,3 +8,4 @@ flask_cors==3.0.10
 graphene==2.1.8
 graphene_mongo==0.2.13
 blinker==1.5
+python-dotenv==0.21.0

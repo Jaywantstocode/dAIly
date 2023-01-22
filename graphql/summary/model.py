@@ -1,5 +1,5 @@
 from abstract.model import AbstractDocument
-from mongoengine.fields import (StringField, ReferenceField)
+from mongoengine.fields import (StringField, ReferenceField, DateField)
 
 class SummaryModel(AbstractDocument):
 
@@ -7,7 +7,9 @@ class SummaryModel(AbstractDocument):
         'collection': 'summary',
     }
 
-    user = ReferenceField("UserModel")
-    name = StringField(required=True)
-    email = StringField()
+    user = ReferenceField("UserModel", required=True)
+    body = StringField()
+    start_date = DateField()
+    end_date = DateField()
+    
     
