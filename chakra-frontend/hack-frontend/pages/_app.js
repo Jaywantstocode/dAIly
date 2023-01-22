@@ -8,6 +8,8 @@ import {
   gql,
 } from "@apollo/client";
 
+import { AppWrapper, useAppContext } from "@/components/ContextProvider";
+
 import "../styles/globals.scss";
 
 const colors = {
@@ -23,8 +25,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-client
+// Horrid, hardcoded request for the user
+const data = client
   .mutate({
     mutation: gql`
       mutation {
@@ -38,16 +40,25 @@ client
       }
     `,
   })
-  .then((result) => console.log("RESULT -> ", result.data));
+  .then((result) => console.log(result.data));
+
+console.log("Data -> ", data);
 
 const theme = extendTheme({ colors });
 
 function MyApp({ Component, pageProps }) {
+  const appContext = useAppContext();
+  console.log("The app context: ", appContext);
+
   return (
-    <ChakraProvider theme={theme}>
-      <Nav />
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <AppWrapper userId={"VXNlcjo2M2NjZTJjNmI5YTI3ZDZiZGZhMGZjYzQ="}>
+      <ApolloProvider client={client}>
+        <ChakraProvider theme={theme}>
+          <Nav />
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </ApolloProvider>
+    </AppWrapper>
   );
 }
 
