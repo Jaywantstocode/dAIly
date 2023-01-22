@@ -38,7 +38,6 @@ class CreateSummaryMutation(AbstractMutation):
         for diary in diaries:
             if diary.key_events == []:
                 continue
-            print(diary.date, diary.key_events)
             out_str = out_str + str(diary.date) + "\n" + str(diaries) + "\n\n"
         
         prompt = summarize(out_str)

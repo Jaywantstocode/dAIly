@@ -59,13 +59,9 @@ class UpdateDiaryMutation(AbstractMutation):
             stop_sequences=[], 
             return_likelihoods='NONE'
         )
-        print(response)
-        print("\n\n response " + response[0])
         try:            
             key_events = response[0].text
-            # print("key event is " + key_events, type(key_events))
             key_events = json.loads(key_events)
-            print(key_events, key_events["Key events"])
             # key_events = json.loads(response[0])
         except json.JSONDecodeError:
             key_events = { "Key events": []}
