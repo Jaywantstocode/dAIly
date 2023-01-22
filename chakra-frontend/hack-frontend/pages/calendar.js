@@ -1,6 +1,6 @@
 import { format, startOfToday, addMonths, startOfMonth, subDays, addDays, endOfMonth} from "date-fns";
 import CalendarView from "@/components/CalendarView";
-import { Flex, Box, Heading } from "@chakra-ui/react";
+import { Flex, Box, Heading, useDisclosure, Fade } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { useAppContext as useUserId } from "@/components/ContextProvider";
@@ -43,16 +43,7 @@ import { QUERY_DIARIES } from "@/components/backend";
 
 const Calendar = (props) => {
   const [anchorDate, setAnchorDate] = useState(startOfToday());
-  const yyyymmdd = (date) => format(date, "yyyy-MM-dd");
-  const startDate = yyyymmdd(subDays(startOfMonth(anchorDate), 7));
-  const endDate = yyyymmdd(addDays(endOfMonth(anchorDate), 7));
-  
-  const userId = useUserId();
-  console.log("Calender: User Id => ", userId);
-
-  const { loading, error, data } = useQuery(QUERY_DIARIES, { variables: { id: userId, startDate: startDate, endDate: endDate }});
-
-  console.log(JSON.stringify(data));
+  const { isOpen, onToggle } = useDisclosure();
 
   const handleChangeMonth = (displacement) => {
     setAnchorDate(addMonths(anchorDate, displacement));
@@ -71,7 +62,7 @@ const Calendar = (props) => {
         flexDirection="row"
       >
         <Box mr="auto" ml="auto">
-          <Heading mb="4%">{dateHeading}</Heading>
+          <Heading letterSpacing="0.1rem" mb="2%">{dateHeading}</Heading>
 
 
           <CalendarView

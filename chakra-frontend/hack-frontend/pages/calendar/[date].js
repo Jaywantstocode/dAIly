@@ -53,7 +53,8 @@ const DatePage = (props) => {
     <>
       <Editor
         date={date}
-        textContent={bodies[0]} />
+        textContent={bodies[0]}
+        subMonth={true} />
     </>);
 };
 

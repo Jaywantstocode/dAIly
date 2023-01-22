@@ -1,5 +1,5 @@
 import Nav from "@/components/Nav";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ScaleFade } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import {
   ApolloClient,
@@ -55,13 +55,19 @@ fonts: {
   heading: frankRuhlLibre,
 } });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <AppWrapper userId={HARDCODED_ID}>
       <ApolloProvider client={client}>
         <ChakraProvider theme={theme}>
           <Nav />
+          <ScaleFade
+            key={router.route}
+            in="true"
+            transition="200ms all">
+
           <Component {...pageProps} />
+            </ScaleFade>
         </ChakraProvider>
       </ApolloProvider>
     </AppWrapper>
