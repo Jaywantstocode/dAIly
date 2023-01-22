@@ -3,23 +3,24 @@ from flask_mongoengine import MongoEngine
 from flask_graphql import GraphQLView
 from mongoengine import connect
 from flask_cors import CORS
+import os
+from dotenv import load_dotenv
 
 from schema import schema
 
-db = MongoEngine()
 app = Flask(__name__)
 CORS(app)
+load_dotenv()
 
-app.config["MONGODB_SETTINGS"] = [
-    {
-        "db": "project1",
-        "host": "localhost",
-        "port": 27017,
-        "alias": "default",
-    }
-]
-db.init_app(app)
-# connect("testing")
+username = os.getenv('username')
+password = os.getenv('password')
+print(username, password)
+connect(
+    'hackshack',
+    username=username,
+    password=password,
+    host=f'mongodb+srv://{username}:{password}@cluster0.w3l8hcs.mongodb.net/?retryWrites=true&w=majority',
+)
 
 app.add_url_rule('/graphql', view_func=GraphQLView.as_view(
     'graphql',
@@ -29,6 +30,7 @@ app.add_url_rule('/graphql', view_func=GraphQLView.as_view(
 
 
 if __name__ == '__main__':
-    app.run()
+    with app.app_context():
+        app.run()
     
 

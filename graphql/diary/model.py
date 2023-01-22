@@ -1,5 +1,6 @@
 from abstract.model import AbstractDocument
-from mongoengine.fields import (StringField)
+from datetime import date
+from mongoengine.fields import (StringField, ReferenceField, DateField, ListField)
 
 
 class DiaryModel(AbstractDocument):
@@ -8,6 +9,7 @@ class DiaryModel(AbstractDocument):
         'collection': 'diary',
     }
 
-    title = StringField(required=True)
+    date = DateField(required=True, default=date.today())
+    user = ReferenceField("UserModel")
     detail = StringField(required=True)
-    keywords = ReferenceField()
+    keyevents = ListField(StringField())
