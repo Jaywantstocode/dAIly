@@ -20,7 +20,7 @@ const Calendar = (props) => {
   return (
     <>
       <Flex w="100vw" h="100vh" alignItems="top" textAlign="center" flexDirection="row">
-        <Box mr="auto" ml="auto" mt="4%">
+        <Box mr="auto" ml="auto">
           <Heading mb="4%">{dateHeading}</Heading>
           <CalendarView
             todaysDate={anchorDate}

@@ -54,7 +54,7 @@ const CalendarView = ({
  }) => {
   const couldBeCurrentDay = todaysDate.toString() === startOfToday().toString();
 
-  const kNumRows = 5;
+  const kNumRows = 6;
   const kNumColumns = 7;
 
   const windowDimensions = useWindowSize();
@@ -82,7 +82,7 @@ const CalendarView = ({
           {indicesOfCalendarGrid.map((dayIndex) => {
             const adjustedDayIndex =
               (dayIndex - dayOffset + daysInMonthCount) % daysInMonthCount;
-            const inCurrentMonth = dayIndex >= dayOffset && dayIndex < daysInMonthCount;
+            const inCurrentMonth = dayIndex >= dayOffset && dayIndex < daysInMonthCount + dayOffset;
             return (
               <Link>
               <DayCard
