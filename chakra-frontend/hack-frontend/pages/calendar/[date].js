@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
 import { format } from "date-fns"
 import { QUERY_DIARIES } from "@/components/backend";
+import { Spinner } from "@chakra-ui/react";
 import yyyymmdd from "@/components/yyyymmdd";
 
 const DatePage = (props) => {
@@ -29,7 +30,7 @@ const DatePage = (props) => {
     variables: { id: userId, startDate: startDate, endDate: endDate },
   });
 
-  if (loading) return "Fetching post"
+  if (loading) return <Spinner />
 
   const bodies = (() => {
     if (data === undefined) return [];
