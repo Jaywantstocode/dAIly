@@ -14,12 +14,14 @@ const Calendar = (props) => {
     setAnchorDate(addMonths(anchorDate, displacement))
   }
   const thisMonth = format(anchorDate, "MMMM");
+  const thisYear = format(anchorDate, "yyyy");
+  const dateHeading = `${thisMonth} ${thisYear}`;
   // const thisMonth = `${format(anchorDate, "MMMM")} ${format(anchorDate, "YYYY")}`;
   return (
     <>
       <Flex w="100vw" h="100vh" alignItems="top" textAlign="center" flexDirection="row">
         <Box mr="auto" ml="auto" mt="4%">
-          <Heading mb="4%">{thisMonth}</Heading>
+          <Heading mb="4%">{dateHeading}</Heading>
           <CalendarView
             todaysDate={anchorDate}
             goBackMonthCallback={() => handleChangeMonth(-1)}
