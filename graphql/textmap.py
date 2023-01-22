@@ -5,10 +5,15 @@ You would provide the following information, in JSON format:\n\n{\n \"Key events
 Here is the diary entry:\n\n
 """
 
-closing = """
+key_closing = """
 You would provide the following information, in JSON format:\n
 """
 
 summarize_prompt = """
+Read the following information and summarize it into multiple small paragraphs:\n\nMonday, January 17th, 2019\n[ \"my first date\", \"met at a cute little coffee shop\", \"walk in the park\", \"went to a nearby restaurant\", \"butterflies in my stomach\"] \n\n\nMonday, January 24th, 2020\n[ \"parents announced to my sister and me that they are getting a divorce\", \"both apologized and said they still loved us and that this was the best decision for everyone involved\",\"scared about what the future holds\"] \n\n\nWednesday, January 26th, 2021\n[ \"My boyfriend of two years dumped me\", \"couldn\'t stop crying\", \"felt like I was in a bad dream\", \"spent the rest of the day in bed\", \"feel hurt, angry, and confused\"] \n\n\nMonday, January 31st, 2022\n[ \"met someone new, her name is Sarah\", \"paired up for a group project\", \"talked about our favorite books and movies\", \"we exchanged phone numbers and made plans to hang out over the weekend\", \"so glad I met her\"] \n\nYou would provide the following information:\n\nOn Monday, January 17th, 2019, I went on my first day. We met at a cute little coffee shop, walked in the park, and went to a nearby restaurant. I had butterflies in my stomach\n\nOn Monday, January 24th, 2020, my parents announced to my sister and me that they are getting a divorce. Both apologized and said they still loved us and that this was the best decision for everyone involved. I was scared about what the future held.\n\nOn Wednesday, January 26th, 2021, my boyfriend of two years dumped me. I couldn\'t stop crying and I felt like I was in a bad dream. I spent the rest of the day in bed. I felt hurt, angry, and confused.\n\nOn Monday, January 31st, 2022, I met someone new, her name is Sarah. We paired up for a group project and talked about our favorite books and movies. We exchanged phone numbers and made plans to hang out over the weekend. I was so glad I met her.\n\n
+Your Turn: \n\n
+"""
 
+sum_closing = """
+You would provide the following information:\n
 """

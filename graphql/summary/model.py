@@ -7,7 +7,7 @@ class SummaryModel(AbstractDocument):
         'collection': 'summary',
     }
 
-    user = ReferenceField("UserModel")
+    user = ReferenceField("UserModel", required=True)
     body = StringField()
     start_date = DateField()
     end_date = DateField()
