@@ -15,11 +15,16 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+import { HamburgerIcon, CloseIcon, SettingsIcon } from '@chakra-ui/icons';
 
-const NavLink = ({ children }) => (
+const pages = [
+  { name: 'Calendar', route: '/calendar' },
+  { name: 'Summaries', route: '/summaries' },
+  { name: 'Memories', route: '/memories' },
+]
+
+const NavLink = ({ name, route }) => (
   <Link
     px={2}
     py={1}
@@ -28,17 +33,20 @@ const NavLink = ({ children }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
-    {children}
+    href={route}>
+    <Box fontSize="20pt">{name}</Box>
   </Link>
 );
 
-export default function Simple() {
+const Nav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const makeLinks = () => pages.map((page, i) => <NavLink key={i} name={page.name} route={page.route}></NavLink>)
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      {/* <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}> */}
+      <Box px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -53,9 +61,7 @@ export default function Simple() {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+              {makeLinks()}
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
@@ -66,12 +72,7 @@ export default function Simple() {
                 variant={'link'}
                 cursor={'pointer'}
                 minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
+                <SettingsIcon />
               </MenuButton>
               <MenuList>
                 <MenuItem>Link 1</MenuItem>
@@ -86,15 +87,13 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+              {makeLinks()}
             </Stack>
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }
+
+export default Nav;
