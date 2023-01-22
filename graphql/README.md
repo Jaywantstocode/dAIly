@@ -19,6 +19,7 @@ Input username and password for MongoDB
 ```
 username="xxx"
 password="xxx"
+COHERE_API="xxx"
 ```
 
 ## run graphql server locally
