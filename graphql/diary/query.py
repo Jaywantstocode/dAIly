@@ -19,7 +19,7 @@ class Query(graphene.ObjectType):
         return diary
         
     diaries = MongoengineConnectionField(Diary)
-    def resolve_diaries(root, info, id=graphene.ID()):
+    def resolve_diaries(root, info, id=graphene.ID(), **kwargs):
         diaries = MongoengineConnectionField(Diary)
-        return diaries.default_resolver(root, info, user=id)
+        return diaries.default_resolver(root, info, user=id, **kwargs)
         

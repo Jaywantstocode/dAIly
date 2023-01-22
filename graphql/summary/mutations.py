@@ -2,7 +2,6 @@ import graphene
 from abstract.mutations import AbstractMutation
 from summary.query import Summary as SummaryType
 from summary.model import SummaryModel
-import cohere 
 
 class SummaryInput(graphene.InputObjectType):
     date = graphene.String()

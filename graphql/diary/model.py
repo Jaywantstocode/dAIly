@@ -7,9 +7,13 @@ class DiaryModel(AbstractDocument):
 
     meta = {
         'collection': 'diary',
+        'indexes' : [
+            'date'
+        ]
     }
 
     date = DateField(required=True, default=date.today())
     user = ReferenceField("UserModel")
-    detail = StringField(required=True)
-    keyevents = ListField(StringField())
+    body = StringField(required=True)
+    key_events = ListField(StringField())
+    # TODO: images
