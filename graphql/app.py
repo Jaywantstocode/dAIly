@@ -14,7 +14,6 @@ load_dotenv()
 
 username = os.getenv('username')
 password = os.getenv('password')
-print(username, password)
 connect(
     'hackshack',
     username=username,
