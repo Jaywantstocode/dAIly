@@ -20,9 +20,9 @@ import { HamburgerIcon, CloseIcon, SettingsIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 
 const pages = [
-  { name: "Calendar", route: "/calendar" },
-  { name: "Summaries", route: "/summaries" },
-  { name: "Memories", route: "/memories" },
+  { name: "CALENDAR", route: "/calendar" },
+  { name: "SUMMARIES", route: "/summaries" },
+  { name: "MEMORIES", route: "/memories" },
 ];
 
 const NavLink = ({ name, route, active }) => {
@@ -84,7 +84,6 @@ const Nav = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
             <HStack
               // border="1px solid red"
               as={"nav"}
